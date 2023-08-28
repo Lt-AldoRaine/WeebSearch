@@ -14,14 +14,6 @@
         romaji  
         english 
       }
-      description
-      isAdult
-      source
-      genres
-      volumes
-      episodes
-      status
-      averageScore
       coverImage {
         large 
       }
