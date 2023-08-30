@@ -2,7 +2,6 @@
 	import Trending from '../components/Trending.svelte';
 	import type { PageData } from './$houdini';
 	import SearchAnime from '../components/searchAnime.svelte';
-	import { PendingValue } from '$houdini';
 
 	export let data: PageData;
 
