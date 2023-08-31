@@ -1,0 +1,14 @@
+query TrendingAnime($id: Int, $page: Int = 1, $perPage: Int = 6) {
+	Page(page: $page, perPage: $perPage) @paginate {
+		pageInfo {
+			total
+			currentPage
+			lastPage
+			hasNextPage
+			perPage
+		}
+		media(type: ANIME, sort: TRENDING_DESC, id: $id) {
+			...TrendingInfo @mask_disable
+		}
+	}
+}

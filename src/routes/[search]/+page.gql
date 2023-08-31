@@ -1,0 +1,14 @@
+query AnimeSearch($page: Int = 1, $perPage: Int = 60, $search: String, $id: Int) {
+  Page (page: $page, perPage: $perPage) {
+    pageInfo {
+      currentPage
+      lastPage
+      total
+      hasNextPage
+      perPage
+    }
+      media (id: $id, search: $search, type: ANIME, sort: POPULARITY_DESC) {
+       ...AnimeInfo @mask_disable
+    }
+  }
+}
