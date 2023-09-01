@@ -1,8 +1,6 @@
 # WeebSearch
 This is an anime search application using the AniList api. It was built using the [Sveltekit](https://kit.svelte.dev/) framework and the [Houdini](https://houdinigraphql.com/) GraphQL client. Made for the final project of CS50.
 
-### **Video Demo()**
-
 ### **Try it: (https://idyllic-folio-397705.uc.r.appspot.com/)**
 
 ## What it does
