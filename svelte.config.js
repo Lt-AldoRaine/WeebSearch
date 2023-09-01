@@ -9,11 +9,8 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
-		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/sveltekit-github-pages' : ''
-		},
 		alias: {
-			$houdini: './$houdini'
+			$houdini: './$houdini',
 		}
 	}
 };
