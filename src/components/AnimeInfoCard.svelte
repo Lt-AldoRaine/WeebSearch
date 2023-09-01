@@ -31,7 +31,7 @@
 </script>
 
 {#if !$info.isAdult}
-	<div class="flex flex-col md:flex-row rounded-lg max-h-item min-w-screen m-8 shadow-lg border-2 border-accent overflow-x-hidden">
+	<div class="flex flex-col md:flex-row rounded-lg max-h-item min-w-screen m-8 shadow-lg order-accent overflow-x-hidden">
 		<img
 			class="h-full md:w-auto max-w-min hidden md:inline-block object-cover rounded-l-lg m-0 backface-hidden"
 			src={$info.coverImage?.large || ''}
