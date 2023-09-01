@@ -1,23 +1,18 @@
 <script lang="ts">
-	import Anime from '../../components/Anime.svelte';
+	import AnimeInfoCard from '../../components/AnimeInfoCard.svelte';
 	import type { PageData } from './$houdini';
-	import SearchAnime from '../../components/searchAnime.svelte';
 
-    export let data: PageData;
+	export let data: PageData;
 
+	let { AnimeSearch } = data;
 	$: ({ AnimeSearch } = data);
 	$: anime = $AnimeSearch.data?.Page?.media;
 </script>
 
-<main class="h-full w-full bg-gray-500">
-	<SearchAnime />
-	<div>
-		{#if $AnimeSearch.fetching}
-			<p>Loading...</p>
-		{:else if $AnimeSearch.data?.Page?.media !== undefined && $AnimeSearch.data?.Page?.media !== null}
-			{#each Object.values(anime) as media}
-				<Anime anime={media} />
-			{/each}
-		{/if}
-	</div>
-</main>
+<div class="grid sm:grid-cols-1 md:grid-cols-2 h-full w-full max-w-fit">
+	{#if $AnimeSearch.data?.Page?.media !== undefined && $AnimeSearch.data?.Page?.media !== null}
+		{#each Object.values(anime) as media}
+			<AnimeInfoCard anime={media} />
+		{/each}
+	{/if}
+</div>

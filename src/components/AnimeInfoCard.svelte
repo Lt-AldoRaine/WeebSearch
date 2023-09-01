@@ -31,41 +31,43 @@
 </script>
 
 {#if !$info.isAdult}
-	<div class="flex flex-row rounded-lg bg-gray-400 min-h-item w-fit m-8 drop-shadow-xl">
+	<div class="flex rounded-lg max-h-item min-w-fit m-8 shadow-lg md:overflow-x-hidden">
 		<img
-			class="h-auto w-screen object-fit rounded-l-lg m-0"
+			class="h-full md:w-auto hidden md:block object-cover rounded-l-lg m-0 backface-hidden"
 			src={$info.coverImage?.large || ''}
 			alt={$info.title?.english || $info?.title?.romaji}
 		/>
 		<div class="flex flex-col p-4">
-			<p class="text-2xl text-gray-100 mb-2">
-				<a href={$info.siteUrl}>{@html $info.title?.english || $info.title?.romaji}</a>
+			<p class="text-3xl mb-4">
+				<a class="link link-primary hover:text-primary-focus" href={$info.siteUrl}>{@html $info.title?.english || $info.title?.romaji}</a>
 			</p>
-			<p class="text-md text-gray-100 mb-4">
+			<div class="flex-1 text-md mb-4 line-clamp-3 md:line-clamp-5">
 				{@html $info.description || ''}
-			</p>
-			<div class="flex flex-col mt-2 mb-4">
-				<p class="text-gray-100 font-semibold text-md">
+			</div>
+			<div class="flex flex-col mt-2 mb-4 gap-4">
+				<p class=" font-bold text-md">
 					START DATE:
 					<span class="font-normal text-sm"
 						>{$info.startDate?.month || ''}/{$info.startDate?.day || ''}/{$info.startDate?.year ||
 							''}</span
 					>
 				</p>
-				<p class="text-gray-100 font-semibold text-md">
+				<p class=" font-bold text-md">
 					STATUS:
-					<span class="font-normal text-sm">{$info.status}</span>
+					<span class="font-normal text-sm">{$info.status || 'Not Available'}</span>
 				</p>
-				<p class="text-gray-100 font-semibold text-md">
-					AVERAGE SCORE:
-					<span class="font-normal text-sm">{$info.averageScore}%</span>
-				</p>
+				{#if $info.averageScore}
+					<p class=" font-bold text-md">
+						AVERAGE SCORE:
+						<span class="font-normal text-sm">{$info.averageScore}%</span>
+					</p>
+				{/if}
 			</div>
-			<ul class="flex gap-4 text-gray-100 text-bold">
+			<div class="flex gap-4 text-bold w-fit">
 				{#each $info.genres as genre}
-					<li class="bg-gray-500 p-2 rounded-lg">{genre}</li>
+					<button class="bg-accent p-2 rounded-lg hover:bg-accent-focus cursor-pointer text-black">{genre}</button>
 				{/each}
-			</ul>
+			</div>
 		</div>
 	</div>
 {/if}

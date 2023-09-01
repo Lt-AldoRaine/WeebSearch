@@ -20,7 +20,7 @@
       {value}
       on:input={onInput}
 		/>
-		<button type="submit" class="btn btn-square bg-accent shadow-lg border-none hover:bg-accent-focus">
+		<button type="submit" class="btn btn-square bg-secondary shadow-lg border-none hover:bg-secondary-focus">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				class="h-6 w-6"
@@ -38,7 +38,7 @@
 		<button
 			type="button"
 			on:click={gotoGithub}
-			class="btn btn-square shadow-lg border-none bg-accent hover:bg-accent-focus"
+			class="btn btn-square shadow-lg border-none bg-secondary hover:bg-secondary-focus"
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"

@@ -29,7 +29,7 @@ const config = {
 	plugins: [require('daisyui'), backfaceVisibility],
 
 	daisyui: {
-		themes: ['emerald', 'dracula']
+		themes: ['cupcake', 'forest']
 	}
 };
 

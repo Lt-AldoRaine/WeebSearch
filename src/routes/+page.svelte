@@ -9,13 +9,12 @@
 	let anime = $TrendingAnime.data?.Page?.media;
 </script>
 
-{#if $TrendingAnime.fetching}
-	<p class="text-2xl bg-primary place-content-center">Loading...</p>
-{:else if $TrendingAnime.data?.Page?.media !== undefined && $TrendingAnime.data?.Page?.media !== null}
-	<div class="min-w-full text-center">
-		<span class="text-6xl font-bold mx-20 text-primary">Trending Anime</span>
-	</div>
-	<div class="flex flex-wrap justify-items-center gap-8 mx-10 mt-20">
+{#if $TrendingAnime.data?.Page?.media !== undefined && $TrendingAnime.data?.Page?.media !== null}
+	<div class="flex flex-wrap justify-items-center gap-8 mx-10 mt-10 mb-auto">
+		<div class="min-w-full text-6xl font-semibold text-primary">
+      Trending
+			<span class="text-6xl font-bold text-secondary">Anime</span>
+		</div>
 		{#each Object.values(anime) as media}
 			<div class="flex-1 transform hover:scale-105 transition ease-in-out duration-600">
 				<a href={media?.siteUrl}>
