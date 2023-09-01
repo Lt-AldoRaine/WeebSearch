@@ -4,7 +4,7 @@
 const config = {
 	schemaPath: './schema.graphql',
 	watchSchema: {
-		url: 'https://graphql.anilist.co'
+    url: 'https://graphql.anilist.co'
 	},
 	plugins: {
 		'houdini-svelte': {}
