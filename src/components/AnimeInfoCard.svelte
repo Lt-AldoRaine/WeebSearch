@@ -31,9 +31,9 @@
 </script>
 
 {#if !$info.isAdult}
-	<div class="flex rounded-lg max-h-item min-w-fit m-8 shadow-lg md:overflow-x-hidden">
+	<div class="flex flex-col md:flex-row rounded-lg max-h-item min-w-screen m-8 shadow-lg border-2 border-accent overflow-x-hidden">
 		<img
-			class="h-full md:w-auto hidden md:block object-cover rounded-l-lg m-0 backface-hidden"
+			class="h-full md:w-auto max-w-min hidden md:inline-block object-cover rounded-l-lg m-0 backface-hidden"
 			src={$info.coverImage?.large || ''}
 			alt={$info.title?.english || $info?.title?.romaji}
 		/>
@@ -41,7 +41,7 @@
 			<p class="text-3xl mb-4">
 				<a class="link link-primary hover:text-primary-focus" href={$info.siteUrl}>{@html $info.title?.english || $info.title?.romaji}</a>
 			</p>
-			<div class="flex-1 text-md mb-4 line-clamp-3 md:line-clamp-5">
+			<div class="flex-1 text-md mb-4 break-normal line-clamp-3 md:line-clamp-5">
 				{@html $info.description || ''}
 			</div>
 			<div class="flex flex-col mt-2 mb-4 gap-4">
