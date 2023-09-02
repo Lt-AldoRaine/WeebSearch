@@ -1,12 +1,6 @@
 import { redirect } from '@sveltejs/kit';
-import { load_AnimeSearch } from '$houdini';
-import type { AnimeSearchVariables, PageLoadEvent, PageLoad } from './$houdini';
-
-export const _AnimeSearchVariables: AnimeSearchVariables = (event) => {
-	return {
-		search: event.params.search
-	};
-};
+import { loadAll, load_AnimeSearch, load_TrendingAnime } from '$houdini';
+import type { PageLoadEvent, PageLoad } from './$houdini';
 
 export function _houdini_afterLoad({ data }: PageLoadEvent) {
 	if (data?.AnimeSearch?.Page?.media.length === 0) {
@@ -16,11 +10,9 @@ export function _houdini_afterLoad({ data }: PageLoadEvent) {
 
 export const load: PageLoad = async (event) => {
 	return {
-		...(await load_AnimeSearch({
-			event,
-			variables: {
-				search: event.params.search
-			}
-		}))
+		...(await loadAll(
+			load_TrendingAnime({ event }),
+			load_AnimeSearch({ event, variables: { search: event.params.search } })
+		))
 	};
 };

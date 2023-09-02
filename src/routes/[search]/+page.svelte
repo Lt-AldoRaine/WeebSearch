@@ -10,7 +10,7 @@
 </script>
 
 <div class="grid sm:grid-cols-1 md:grid-cols-2 h-full w-full max-w-fit">
-	{#if $AnimeSearch.data?.Page?.media !== undefined && $AnimeSearch.data?.Page?.media !== null}
+	{#if anime !== undefined && anime !== null}
 		{#each Object.values(anime) as media}
 			<AnimeInfoCard anime={media} />
 		{/each}
