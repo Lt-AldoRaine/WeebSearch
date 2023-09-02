@@ -6,6 +6,6 @@
 
 </script>
 
-<form action={base}/{input}> 
+<form class="basis-1/2" action={base}/{input}> 
   <Input bind:value={input} />
 </form>

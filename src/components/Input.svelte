@@ -16,7 +16,7 @@
 		<input
       type="text"
 			placeholder="Search…"
-			class="input input-group-lg drop-shadow-lg text-accent placeholder-accent"
+			class="input input-group-lg focus:outline-none drop-shadow-lg text-accent placeholder-accent"
       {value}
       on:input={onInput}
 		/>
